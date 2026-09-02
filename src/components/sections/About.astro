@@ -1,5 +1,8 @@
 ---
 import { STATS } from "../../data/bandData";
+import imgPolo1 from "../../assets/images/kegiatan (5).jpeg";
+import imgPolo2 from "../../assets/images/kegiatan (13).jpeg";
+import imgPolo3 from "../../assets/images/kegiatan (17).jpeg";
 ---
 
 <!-- ====== ABOUT US ====== -->
@@ -24,15 +27,15 @@ import { STATS } from "../../data/bandData";
       <!-- Polaroid Collage -->
       <div class="about-collage" data-reveal style="--rd:150ms">
         <figure class="polo p1">
-          <img src="../../../src/assets/images/kegiatan (5).jpeg" alt="Band rehearsal in music studio" loading="lazy" />
-          <figcaption class="polo-cap" data-i18n="about.polo1">Studio — Wed afternoon</figcaption>
+          <img src={imgPolo1.src} alt="Extracurricular Demonstration" loading="lazy" />
+          <figcaption class="polo-cap" data-i18n="about.polo1">Demos Eskul</figcaption>
         </figure>
         <figure class="polo p2">
-          <img src="../../../src/assets/images/kegiatan (13).jpeg" alt="Live performance at Arts Fest 2025" loading="lazy" />
-          <figcaption class="polo-cap" data-i18n="about.polo2">Arts Fest 2025</figcaption>
+          <img src={imgPolo2.src} alt="Live performance at Ka'Fest 2025" loading="lazy" />
+          <figcaption class="polo-cap" data-i18n="about.polo2">Ka'Fest 2025</figcaption>
         </figure>
         <figure class="polo p3">
-          <img src="../../../src/assets/images/kegiatan (17).jpeg" alt="EP recording session" loading="lazy" />
+          <img src={imgPolo3.src} alt="EP recording session" loading="lazy" />
           <figcaption class="polo-cap" data-i18n="about.polo3">Recording EP</figcaption>
         </figure>
         <div class="sticker" aria-hidden="true">
