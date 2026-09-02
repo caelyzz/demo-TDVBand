@@ -25,8 +25,8 @@ export const TRANSLATIONS: TranslationDictionary = {
 
   // Mobile Menu
   'mobile.note': {
-    en: 'WED & FRI — 15:30 · BUILDING B STUDIO',
-    id: 'RABU & JUMAT — 15.30 · STUDIO GEDUNG B',
+    en: 'TUE & THU — 15:30 · SOUNDPROOF ROOM',
+    id: 'SELASA & KAMIS — 15.30 · SOUNDPROOF ROOM',
   },
 
   // Hero Section
@@ -118,8 +118,8 @@ export const TRANSLATIONS: TranslationDictionary = {
     id: 'Audisi santai: lima menit, satu lagu bebas.',
   },
   'join.check3': {
-    en: 'Practice Wed & Fri, 15:30, Building B Studio.',
-    id: 'Latihan Rabu & Jumat, 15.30, Studio Gedung B.',
+    en: 'Practice Tue & Thu, 15:30, Soundproof Room',
+    id: 'Latihan Selasa & Kamis, 15.30, Ruang Kedap Suara',
   },
   'join.check4': {
     en: 'Instruments provided by school; feel free to bring your own.',

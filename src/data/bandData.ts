@@ -175,11 +175,11 @@ export const DIVISIONS: DivisionItem[] = [
 export const GALLERY_ITEMS: GalleryItem[] = [
   {
     id: "session-rabu",
-    titleEn: "Wednesday Session",
+    titleEn: "Tuesday Session",
     titleId: "Session Rabu",
-    captionEn: "Wednesday Session — Music Studio",
+    captionEn: "Tuesday Session — Music Studio",
     captionId: "Session Rabu — Studio Musik",
-    altEn: "Wednesday Session — Music Studio",
+    altEn: "Tuesday Session — Music Studio",
     altId: "Session Rabu — Studio Musik",
     thumbSrc: "../src/assets/images/kegiatan (1).jpeg",
     fullSrc: "../src/assets/images/kegiatan (1).jpeg",
