@@ -1,0 +1,25 @@
+---
+import { MARQUEE_ITEMS } from "../../data/bandData";
+---
+
+<!-- ====== MARQUEE BAND ====== -->
+<div class="marquee-band" aria-hidden="true">
+  <div class="marquee-track" id="mqTrack">
+    <div class="mq-group">
+      {MARQUEE_ITEMS.map((item) => (
+        <>
+          <span
+            class={`mq-item ${item.isHollow ? 'hollow' : ''}`}
+            data-en={item.textEn}
+            data-id={item.textId}
+          >
+            {item.textEn}
+          </span>
+          <svg class="mq-star" viewBox="0 0 24 24">
+            <path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4Z"/>
+          </svg>
+        </>
+      ))}
+    </div>
+  </div>
+</div>

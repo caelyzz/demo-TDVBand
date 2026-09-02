@@ -1,0 +1,26 @@
+---
+import { TIMELINE } from "../../data/bandData";
+---
+
+<!-- ====== TIMELINE ====== -->
+<section id="perjalanan">
+  <div class="bg-word" style="top:2%;left:-5%" aria-hidden="true">REVERB</div>
+  <div class="container">
+    <div class="sec-head" data-reveal>
+      <div class="eyebrow" data-i18n="timeline.eyebrow">05 — TIMELINE</div>
+      <h2 class="sec-title split" data-i18n="timeline.title">Eight years of distortion.</h2>
+    </div>
+
+    <div class="tl">
+      {TIMELINE.map((item) => (
+        <div class="tl-item" data-reveal style={item.delay ? `--rd:${item.delay}` : undefined}>
+          <div class="tl-card">
+            <div class="tl-year">{item.year}</div>
+            <div class="tl-t" data-en={item.titleEn} data-id={item.titleId}>{item.titleEn}</div>
+            <div class="tl-d" data-en={item.descEn} data-id={item.descId}>{item.descEn}</div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

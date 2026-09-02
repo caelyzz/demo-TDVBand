@@ -1,0 +1,204 @@
+---
+const rawImages = import.meta.glob<{ default: string }>('../../assets/images/kegiatan (*).jpeg', {
+  eager: true,
+  query: '?url',
+});
+
+const galleryList = [
+  {
+    id: "session-01",
+    titleEn: "Studio Session // 01",
+    titleId: "Latihan Studio // 01",
+    captionEn: "Studio Session — Practice & song arrangement",
+    captionId: "Latihan Studio — Latihan & aransemen lagu",
+    fileName: "kegiatan (1).jpeg",
+  },
+  {
+    id: "session-02",
+    titleEn: "Guitar & Bass Jam // 02",
+    titleId: "Jamming Gitar & Bass // 02",
+    captionEn: "Rhythm Section — Locking in groove and harmony",
+    captionId: "Seksi Ritme — Penyelarasan groove dan harmoni",
+    fileName: "kegiatan (2).jpeg",
+  },
+  {
+    id: "session-03",
+    titleEn: "Vocal Warmup // 03",
+    titleId: "Pemanasan Vokal // 03",
+    captionEn: "Vocal Section — Harmony & lead vocal tuning",
+    captionId: "Seksi Vokal — Penyelarasan vokal dan harmoni",
+    fileName: "kegiatan (3).jpeg",
+  },
+  {
+    id: "session-04",
+    titleEn: "Drum Groove Drill // 04",
+    titleId: "Latihan Ketukan Drum // 04",
+    captionEn: "Acoustic Drums — Dynamic rhythm & fill-in practice",
+    captionId: "Drum Akustik — Latihan tempo dan variasi ketukan",
+    fileName: "kegiatan (4).jpeg",
+  },
+  {
+    id: "session-05",
+    titleEn: "Live Stage Showcase // 05",
+    titleId: "Penampilan Panggung Utama // 05",
+    captionEn: "Stage Showcase — Main setlist performance",
+    captionId: "Pentas Seni — Penampilan lagu-lagu utama",
+    fileName: "kegiatan (5).jpeg",
+  },
+  {
+    id: "session-06",
+    titleEn: "Backstage Soundcheck // 06",
+    titleId: "Soundcheck Backstage // 06",
+    captionEn: "Soundcheck — Gear tuning before going live",
+    captionId: "Soundcheck — Tuning instrumen sebelum tampil",
+    fileName: "kegiatan (6).jpeg",
+  },
+  {
+    id: "session-07",
+    titleEn: "Keyboard Soundscape // 07",
+    titleId: "Eksplorasi Synthesizer // 07",
+    captionEn: "Synth & Keys — Layering ambient pads & chords",
+    captionId: "Keyboard & Synth — Penyusunan suasana dan chord",
+    fileName: "kegiatan (7).jpeg",
+  },
+  {
+    id: "session-08",
+    titleEn: "Music Workshop // 08",
+    titleId: "Evaluasi Aransemen // 08",
+    captionEn: "Mentorship — Evaluasi & pengarahan aransemen",
+    captionId: "Workshop Musik — Evaluasi dan pemantapan lagu",
+    fileName: "kegiatan (8).jpeg",
+  },
+  {
+    id: "session-09",
+    titleEn: "School Pensi Live // 09",
+    titleId: "Pentas Seni Sekolah // 09",
+    captionEn: "Pensi Showcase — Performing at school festival",
+    captionId: "Pentas Seni — Tampil meriah di panggung sekolah",
+    fileName: "kegiatan (9).jpeg",
+  },
+  {
+    id: "session-10",
+    titleEn: "Studio Rest Break // 10",
+    titleId: "Istirahat Latihan // 10",
+    captionEn: "Chill Session — Discussion & rest between takes",
+    captionId: "Sesi Santai — Diskusi lagu setelah latihan ketat",
+    fileName: "kegiatan (10).jpeg",
+  },
+  {
+    id: "session-11",
+    titleEn: "Audio Engineering // 11",
+    titleId: "Penataan Monitor & Mic // 11",
+    captionEn: "Monitor Mix — Mic checking & audio calibration",
+    captionId: "Tata Suara — Cek mik dan keseimbangan audio",
+    fileName: "kegiatan (11).jpeg",
+  },
+  {
+    id: "session-12",
+    titleEn: "Band Togetherness // 12",
+    titleId: "Kebersamaan Anggota // 12",
+    captionEn: "Team Bonding — Togetherness of members & crew",
+    captionId: "Kekeluargaan — Kebersamaan seluruh anggota band",
+    fileName: "kegiatan (12).jpeg",
+  },
+  {
+    id: "session-13",
+    titleEn: "Acoustic Unplugged // 13",
+    titleId: "Latihan Akustik // 13",
+    captionEn: "Unplugged Session — Semi-acoustic arrangement",
+    captionId: "Sesi Akustik — Aransemen versi akustik santai",
+    fileName: "kegiatan (13).jpeg",
+  },
+  {
+    id: "session-14",
+    titleEn: "Backstage Preparation // 14",
+    titleId: "Persiapan Backstage // 14",
+    captionEn: "Backstage Moments — Gear setup before showtime",
+    captionId: "Persiapan Tampil — Cek instrumen di balik panggung",
+    fileName: "kegiatan (14).jpeg",
+  },
+  {
+    id: "session-15",
+    titleEn: "Concert Spotlight // 15",
+    titleId: "Sorotan Lampu Panggung // 15",
+    captionEn: "Concert Night — High energy stage performance",
+    captionId: "Malam Konser — Aksi panggung bertenaga tinggi",
+    fileName: "kegiatan (15).jpeg",
+  },
+  {
+    id: "session-16",
+    titleEn: "Studio Recording // 16",
+    titleId: "Rekaman Studio // 16",
+    captionEn: "Direct Audio Track — Studio recording session",
+    captionId: "Sesi Rekaman — Pengambilan trek lagu di studio",
+    fileName: "kegiatan (16).jpeg",
+  },
+  {
+    id: "session-17",
+    titleEn: "Closing Encore // 17",
+    titleId: "Lagu Penutup // 17",
+    captionEn: "Final Song — Encore performance & crowd applause",
+    captionId: "Lagu Pamungkas — Penutupan konser & sorak penonton",
+    fileName: "kegiatan (17).jpeg",
+  },
+  {
+    id: "session-18",
+    titleEn: "Tradevis Crew Photo // 18",
+    titleId: "Foto Bersama Tim // 18",
+    captionEn: "Full Team — Complete Tradevis Band lineup & crew",
+    captionId: "Foto Bersama — Seluruh tim & divisi Tradevis Band",
+    fileName: "kegiatan (18).jpeg",
+  },
+];
+
+const GALLERY_ITEMS = galleryList.map((item) => {
+  const matchKey = Object.keys(rawImages).find((k) => k.includes(item.fileName));
+  const src = matchKey ? rawImages[matchKey].default : "";
+  return {
+    ...item,
+    altEn: item.titleEn,
+    altId: item.titleId,
+    thumbSrc: src,
+    fullSrc: src,
+  };
+});
+---
+
+<!-- ====== GALLERY ====== -->
+<section id="galeri">
+  <div class="bg-word" style="bottom:-4%;left:-3%" aria-hidden="true">STAGE</div>
+  <div class="container">
+    <div class="sec-head" data-reveal>
+      <div class="eyebrow" data-i18n="gallery.eyebrow">03 — GALLERY</div>
+      <h2 class="sec-title split" data-i18n="gallery.title">Proof that we actually practice.</h2>
+      <p class="sec-sub" data-i18n="gallery.sub">Trace of our studio sessions and stage performances — click any photo to enlarge.</p>
+    </div>
+
+    <div class="masonry" id="masonry">
+      {GALLERY_ITEMS.map((item) => (
+        <figure
+          class="g-item"
+          tabindex="0"
+          role="button"
+          aria-label={`Enlarge photo: ${item.titleEn}`}
+          data-cap-en={item.captionEn}
+          data-cap-id={item.captionId}
+          data-cap={item.captionEn}
+          data-full={item.fullSrc}
+        >
+          <img
+            src={item.thumbSrc}
+            alt={item.altEn}
+            data-alt-en={item.altEn}
+            data-alt-id={item.altId}
+            loading="lazy"
+          />
+          <figcaption class="g-cap">
+            <span data-en={item.titleEn} data-id={item.titleId}>{item.titleEn}</span>
+            <i data-lucide="maximize-2"></i>
+          </figcaption>
+        </figure>
+      ))}
+    </div>
+  </div>
+</section>

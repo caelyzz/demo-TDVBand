@@ -1,0 +1,101 @@
+---
+import { DIVISIONS } from "../../data/bandData";
+---
+
+<!-- ====== JOIN US ====== -->
+<section id="gabung">
+  <div class="bg-word" style="bottom:-6%;right:-4%" aria-hidden="true">TRADEVIS</div>
+  <div class="container">
+    <div class="join-panel glass" data-reveal>
+      <!-- Registration Information -->
+      <div class="join-info">
+        <div class="eyebrow" data-i18n="join.eyebrow">06 — JOIN US</div>
+        <h2 class="sec-title split" data-i18n="join.title">The stage needs you.</h2>
+        <p data-i18n="join.sub">This form isn't an audition — just a way for us to get to know you first. Registration closes one day before auditions.</p>
+        
+        <ul class="checks">
+          <li>
+            <span class="check-li"><i data-lucide="check"></i></span>
+            <span data-i18n="join.check1">No advanced skills needed — just bring your passion.</span>
+          </li>
+          <li>
+            <span class="check-li"><i data-lucide="check"></i></span>
+            <span data-i18n="join.check2">Chill audition: 5 minutes, one song of your choice.</span>
+          </li>
+          <li>
+            <span class="check-li"><i data-lucide="check"></i></span>
+            <span data-i18n="join.check3">Practice Wed &amp; Fri, 15:30, Building B Studio.</span>
+          </li>
+          <li>
+            <span class="check-li"><i data-lucide="check"></i></span>
+            <span data-i18n="join.check4">Instruments provided by school; feel free to bring your own.</span>
+          </li>
+        </ul>
+
+        <!-- Vinyl Spinning Animation -->
+        <div class="vinyl-wrap">
+          <span class="vinyl" aria-hidden="true">
+            <i data-lucide="disc-3"></i>
+          </span>
+          <span class="vinyl-lbl" data-i18n="join.vinyl_lbl">
+            SIDE A — "BETWEEN LESSONS" · LIVE SESSION · 33⅓ RPM
+          </span>
+        </div>
+      </div>
+
+      <!-- Registration Form -->
+      <form class="join-form" id="joinForm" novalidate>
+        <div class="field">
+          <label for="f-nama" data-i18n="join.label_nama">Full Name</label>
+          <input
+            id="f-nama"
+            name="nama"
+            type="text"
+            placeholder="e.g. Nadia Prameswari"
+            data-i18n-attr="placeholder:join.placeholder_nama"
+            autocomplete="name"
+          />
+        </div>
+
+        <div class="field">
+          <label for="f-kelas" data-i18n="join.label_kelas">Class</label>
+          <input
+            id="f-kelas"
+            name="kelas"
+            type="text"
+            placeholder="e.g. X Science 2"
+            data-i18n-attr="placeholder:join.placeholder_kelas"
+          />
+        </div>
+
+        <div class="field">
+          <label for="f-divisi" data-i18n="join.label_divisi">Preferred Division</label>
+          <select id="f-divisi" name="divisi">
+            {DIVISIONS.map((d) => (
+              <option value={d.nameEn} data-en={d.nameEn} data-id={d.nameId}>
+                {d.nameEn}
+              </option>
+            ))}
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="f-cerita" data-i18n="join.label_cerita">Short Story / Background (optional)</label>
+          <textarea
+            id="f-cerita"
+            name="cerita"
+            placeholder="Favorite song? Played before? Anything on your mind, type away."
+            data-i18n-attr="placeholder:join.placeholder_cerita"
+          ></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-solid magnetic" id="submitBtn">
+          <span data-i18n="join.submit_btn">Submit Application</span>
+          <i data-lucide="arrow-right"></i>
+        </button>
+
+        <p class="form-note" data-i18n="join.note">Prefer face-to-face? Visit us at the studio during Wednesday sessions.</p>
+      </form>
+    </div>
+  </div>
+</section>

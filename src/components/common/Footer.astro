@@ -1,0 +1,32 @@
+---
+import { SOCIAL_LINKS } from "../../data/bandData";
+---
+
+<footer>
+  <div class="container">
+    <div class="foot-giant" data-reveal>TRADEVIS</div>
+    <div class="foot-mid">
+      <div class="foot-info">
+        <p class="fi-lead" data-i18n="foot.lead">Tradevis High School Music Extracurricular — since 2017.</p>
+        <p class="fi-line"><i data-lucide="map-pin"></i><span data-i18n="foot.location">Music Studio, Building B 1st Floor</span></p>
+        <p class="fi-line"><i data-lucide="clock"></i><span data-i18n="foot.time">Wed &amp; Fri · 15:30 — 17:00</span></p>
+      </div>
+      <div class="foot-soc">
+        {SOCIAL_LINKS.map((s) => (
+          <a
+            class="soc"
+            href={s.href}
+            aria-label={`${s.name} Tradevis`}
+            data-msg-key={s.messageKey}
+          >
+            <i data-lucide={s.icon}></i>
+          </a>
+        ))}
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span data-i18n="foot.copy">© 2025 Tradevis Band — made with distortion, reverb, and three cups of coffee.</span>
+      <span class="mono">EST. 2017</span>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,92 @@
+---
+import { DIVISIONS } from "../../data/bandData";
+import micGlb from '../../assets/3d/microphone.glb?url';
+import guitarGlb from '../../assets/3d/electric_guitar_dragons_v1.2.glb?url';
+import bassGlb from '../../assets/3d/percussion_bass_guitar.glb?url';
+import drumGlb from '../../assets/3d/standard_drum_set.glb?url';
+import keyboardGlb from '../../assets/3d/yamaha_keyboard.glb?url';
+
+const modelMap: Record<string, string> = {
+  vokal: micGlb,
+  gitar: guitarGlb,
+  bass: bassGlb,
+  drum: drumGlb,
+  keyboard: keyboardGlb,
+};
+---
+
+<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+
+<!-- ====== DIVISIONS PINNED HORIZONTAL SCROLL ====== -->
+<section id="divisi" class="divisions-scroll-section" aria-label="Band Divisions">
+  <!-- Pinned Sticky Container (locks to 100vh) -->
+  <div class="divisions-sticky" id="divisionsSticky">
+    
+    <!-- Simple Thin Grid Background -->
+    <div class="div-bg-ambient" aria-hidden="true">
+      <div class="div-grid-overlay-bw"></div>
+    </div>
+
+    <!-- Horizontal Slides Track (Slides sideways as user scrolls) -->
+    <div class="divisions-track" id="divisionsTrack">
+      {DIVISIONS.map((div, i) => (
+        <article class={`division-slide ${i === 0 ? 'active-slide' : ''}`} id={`slide-${div.id}`} data-index={i}>
+          <div class="slide-container-bw">
+            
+            <!-- Top/Left: Simple Text Info -->
+            <div class="slide-info-bw">
+              <div class="slide-eyebrow-bw">
+                <span>{`0${i + 1}`} // 05</span>
+                <span class="divider">—</span>
+                <span data-i18n="divisions.eyebrow">DIVISIONS</span>
+              </div>
+
+              <h2 class="slide-title-bw" data-en={div.nameEn} data-id={div.nameId}>
+                {div.nameEn}
+              </h2>
+
+              <p class="slide-desc-bw" data-en={div.descEn} data-id={div.descId}>
+                {div.descEn}
+              </p>
+
+              <div class="slide-specs-bw">
+                <div class="spec-item">
+                  <span class="spec-lbl">COORD</span>
+                  <strong class="spec-val" data-en={div.coordEn} data-id={div.coordId}>{div.coordEn}</strong>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-lbl">GEAR</span>
+                  <strong class="spec-val">{div.gear}</strong>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-lbl">SLOTS</span>
+                  <strong class="spec-val" data-en={div.slotEn} data-id={div.slotId}>{div.slotEn}</strong>
+                </div>
+              </div>
+            </div>
+
+            <!-- Center/Right: 3D Asset -->
+            <div class="slide-3d-stage-bw">
+               <model-viewer
+                 src={modelMap[div.id]}
+                 alt={div.nameEn}
+                 auto-rotate
+                 rotation-per-second="20deg"
+                 camera-controls
+                 disable-zoom
+                 touch-action="pan-y"
+                 shadow-intensity="1"
+                 shadow-softness="0.5"
+                 exposure="1"
+                 environment-image="neutral"
+                 class="model-viewer-bw"
+               ></model-viewer>
+            </div>
+
+          </div>
+        </article>
+      ))}
+    </div>
+
+  </div>
+</section>

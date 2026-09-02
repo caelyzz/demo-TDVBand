@@ -1,0 +1,85 @@
+---
+import heroBgImg from "../../assets/hero-bgb.jpg";
+---
+
+<section id="hero">
+  <!-- Background Image -->
+  <div class="hero-bg" id="heroBg">
+    <img
+      id="heroImg"
+      src={heroBgImg.src}
+      alt="Hand-drawn musical illustration: guitar, saxophone, drums, keyboard, microphone, and notes"
+    />
+  </div>
+  <div class="hero-veil" aria-hidden="true"></div>
+  <div class="hero-vig" aria-hidden="true"></div>
+
+  <!-- Floating Doodles -->
+  <div class="doodles" id="doodles" aria-hidden="true">
+    <div class="doodle" data-depth="1.5" style="top:15%;left:6%;--dur:6.5s;--dd:.55s">
+      <span class="doodle-in" style="display:block;width:34px;height:34px"><i data-lucide="music-2"></i></span>
+    </div>
+    <div class="doodle" data-depth="1" style="top:22%;right:7%;--dur:8s;--dd:.7s">
+      <span class="doodle-in" style="display:block;width:58px;height:58px"><i data-lucide="disc-3"></i></span>
+    </div>
+    <div class="doodle" data-depth=".7" style="top:54%;right:26%;--dur:7s;--dd:.85s">
+      <span class="doodle-in" style="display:block;width:22px;height:22px"><i data-lucide="star"></i></span>
+    </div>
+    <div class="doodle" data-depth="1.2" style="bottom:24%;right:13%;--dur:7.5s;--dd:.6s">
+      <span class="doodle-in" style="display:block;width:40px;height:40px"><i data-lucide="music-4"></i></span>
+    </div>
+    <div class="doodle" data-depth=".9" style="bottom:44%;left:2%;--dur:6s;--dd:.9s">
+      <span class="doodle-in" style="display:block;width:26px;height:26px"><i data-lucide="sparkles"></i></span>
+    </div>
+  </div>
+
+  <!-- Main Hero Inner -->
+  <div class="hero-inner container" id="heroInner">
+    <div class="hero-eyebrow">
+      <span class="rec-dot"></span>
+      <span data-i18n="hero.eyebrow">MUSIC EXTRACURRICULAR — VOCATIONAL HIGH SCHOOL 8 JKT</span>
+    </div>
+
+    <!-- Hero Title: TRADEVIS BAND (Unified multi-line statement) -->
+    <h1 class="hero-title" id="heroTitle" aria-label="TRADEVIS BAND">
+      <span class="hero-line hero-line-main">
+        <span class="lt" style="--i:0" aria-hidden="true">T</span>
+        <span class="lt" style="--i:1" aria-hidden="true">R</span>
+        <span class="lt" style="--i:2" aria-hidden="true">A</span>
+        <span class="lt" style="--i:3" aria-hidden="true">D</span>
+        <span class="lt" style="--i:4" aria-hidden="true">E</span>
+        <span class="lt outline" style="--i:5" aria-hidden="true">V</span>
+        <span class="lt outline" style="--i:6" aria-hidden="true">I</span>
+        <span class="lt outline" style="--i:7" aria-hidden="true">S</span>
+      </span>
+      <span class="hero-line hero-line-sub">
+        <span class="lt outline" style="--i:8" aria-hidden="true">B</span>
+        <span class="lt outline" style="--i:9" aria-hidden="true">A</span>
+        <span class="lt" style="--i:10" aria-hidden="true">N</span>
+        <span class="lt" style="--i:11" aria-hidden="true">D</span>
+      </span>
+    </h1>
+
+    <p class="hero-meta" data-i18n="hero.meta">32 MEMBERS — 5 DIVISIONS — 40+ GIGS</p>
+
+    <div class="hero-actions">
+      <button class="btn btn-solid magnetic play-btn" id="playBtn">
+        <span class="ic ic-play"><i data-lucide="play"></i></span>
+        <span class="ic ic-pause"><i data-lucide="pause"></i></span>
+        <span id="playLabel" data-i18n="hero.play">Play Our Sound</span>
+      </button>
+      <a class="btn btn-ghost magnetic" href="#divisi">
+        <span data-i18n="hero.explore">Explore Divisions</span> <i data-lucide="arrow-down"></i>
+      </a>
+    </div>
+
+    <!-- Visualizer Equalizer -->
+    <div id="eq" aria-hidden="true"></div>
+  </div>
+
+  <!-- Scroll Cue -->
+  <a class="scroll-cue" href="#tentang" aria-label="Scroll down">
+    <span class="cue-line"><span></span></span>
+    <span class="cue-txt" data-i18n="hero.scroll">SCROLL</span>
+  </a>
+</section>

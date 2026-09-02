@@ -1,0 +1,88 @@
+---
+import "../styles/global.css";
+import Loader from "../components/ui/Loader.astro";
+import CustomCursor from "../components/ui/CustomCursor.astro";
+import ScrollProgress from "../components/ui/ScrollProgress.astro";
+import Lightbox from "../components/ui/Lightbox.astro";
+import ToastContainer from "../components/ui/ToastContainer.astro";
+import ConfettiCanvas from "../components/ui/ConfettiCanvas.astro";
+import Navbar from "../components/common/Navbar.astro";
+import MobileMenu from "../components/common/MobileMenu.astro";
+import Footer from "../components/common/Footer.astro";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Tradevis Band — Music Extracurricular",
+  description = "Tradevis Band — music extracurricular of Tradevis High School. High school band, own studio, semester concerts.",
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Space+Grotesk:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- Preloader -->
+    <Loader />
+
+    <!-- Custom Cursor -->
+    <CustomCursor />
+
+    <!-- Scroll Progress Bar & To-Top Button -->
+    <ScrollProgress />
+
+    <!-- Navigation & Mobile Menu -->
+    <Navbar />
+    <MobileMenu />
+
+    <!-- Main Page Content -->
+    <slot />
+
+    <!-- Footer -->
+    <Footer />
+
+    <!-- Overlays: Lightbox Modal, Toasts, Confetti -->
+    <Lightbox />
+    <ToastContainer />
+    <ConfettiCanvas />
+
+    <!-- Lucide Icons Script -->
+    <script is:inline src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
+    <!-- Client-side Scripts -->
+    <script>
+      import { initI18n } from "../scripts/i18n";
+      import { initAudioSynth } from "../scripts/audio-synth";
+      import { initInteractions } from "../scripts/main-interactions";
+
+      function startApp() {
+        initI18n();
+        initAudioSynth();
+        initInteractions();
+      }
+
+      if (document.readyState === "complete" || document.readyState === "interactive") {
+        startApp();
+      } else {
+        document.addEventListener("DOMContentLoaded", startApp);
+      }
+    </script>
+  </body>
+</html>

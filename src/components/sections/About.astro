@@ -1,0 +1,57 @@
+---
+import { STATS } from "../../data/bandData";
+---
+
+<!-- ====== ABOUT US ====== -->
+<section id="tentang">
+  <div class="bg-word" style="top:14%;right:-4%" aria-hidden="true">SOUND</div>
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-txt" data-reveal>
+        <div class="eyebrow" data-i18n="about.eyebrow">01 — ABOUT US</div>
+        <h2 class="sec-title split" data-i18n="about.title">From the nurse's office to city stages.</h2>
+        <p data-i18n="about.p1">
+          Tradevis Band was born in 2017 from five kids with no place to practice. Today we are 32 members, with our <em>own studio</em> in Building B, performing almost every semester — from school arts fests to inter-school battle of bands.
+        </p>
+        <p data-i18n="about.p2">
+          We are more than just a band. We are a space to learn, fail, and get loud together. Science students learning audio mixing, arts students finding their voice, and the quietest kid turns out to be a killer drummer. Everyone starts from zero — including us.
+        </p>
+        <a href="#gabung" class="btn btn-ghost magnetic">
+          <span data-i18n="about.btn">Why Join Us</span> <i data-lucide="arrow-right"></i>
+        </a>
+      </div>
+
+      <!-- Polaroid Collage -->
+      <div class="about-collage" data-reveal style="--rd:150ms">
+        <figure class="polo p1">
+          <img src="../../../src/assets/images/kegiatan (5).jpeg" alt="Band rehearsal in music studio" loading="lazy" />
+          <figcaption class="polo-cap" data-i18n="about.polo1">Studio — Wed afternoon</figcaption>
+        </figure>
+        <figure class="polo p2">
+          <img src="../../../src/assets/images/kegiatan (13).jpeg" alt="Live performance at Arts Fest 2025" loading="lazy" />
+          <figcaption class="polo-cap" data-i18n="about.polo2">Arts Fest 2025</figcaption>
+        </figure>
+        <figure class="polo p3">
+          <img src="../../../src/assets/images/kegiatan (17).jpeg" alt="EP recording session" loading="lazy" />
+          <figcaption class="polo-cap" data-i18n="about.polo3">Recording EP</figcaption>
+        </figure>
+        <div class="sticker" aria-hidden="true">
+          <i data-lucide="star"></i>
+          <span>EST.<br>2017</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Achievement Stats -->
+    <div class="stats glass" data-reveal>
+      {STATS.map((stat) => (
+        <div class="stat">
+          <span class="num" data-count={stat.count} data-suffix={stat.suffix || ""}>
+            0
+          </span>
+          <span class="lbl" data-i18n={stat.i18nKey}>{stat.labelEn}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

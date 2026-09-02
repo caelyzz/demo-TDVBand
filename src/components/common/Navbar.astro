@@ -1,0 +1,42 @@
+---
+import logoImg from "../../assets/logo.svg";
+---
+
+<header id="nav">
+  <div class="nav-pill">
+    <a href="#hero" class="brand" aria-label="Tradevis Band — back to top">
+      <img
+        src={logoImg.src}
+        alt="Tradevis Band Logo"
+        class="brand-logo"
+        width="36"
+        height="36"
+      />
+      <span class="brand-name">TRADEVIS<small>BAND</small></span>
+    </a>
+
+    <nav class="nav-links" aria-label="Main navigation">
+      <a class="nav-link" href="#tentang" data-i18n="nav.tentang">About</a>
+      <a class="nav-link" href="#divisi" data-i18n="nav.divisi">Divisions</a>
+      <a class="nav-link" href="#galeri" data-i18n="nav.galeri">Gallery</a>
+      <a class="nav-link" href="#agenda" data-i18n="nav.agenda">Agenda</a>
+      <a class="nav-link" href="#perjalanan" data-i18n="nav.perjalanan">Timeline</a>
+    </nav>
+
+    <div class="nav-right">
+      <!-- Tombol Switch Bahasa -->
+      <button class="btn btn-ghost btn-sm lang-btn" type="button" aria-label="Switch Language">
+        <i data-lucide="globe"></i>
+        <span class="lang-btn-text">EN</span>
+      </button>
+
+      <a href="#gabung" class="btn btn-solid btn-sm magnetic">
+        <span data-i18n="nav.gabung">Join Us</span> <i data-lucide="arrow-up-right"></i>
+      </a>
+      <button id="burger" class="burger" aria-label="Toggle mobile menu">
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+</header>

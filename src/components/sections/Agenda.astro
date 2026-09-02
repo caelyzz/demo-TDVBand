@@ -1,0 +1,68 @@
+---
+import { EVENTS } from "../../data/bandData";
+---
+
+<!-- ====== AGENDA ====== -->
+<section id="agenda">
+  <div class="bg-word" style="top:0;right:-6%" aria-hidden="true">STAGE</div>
+  <div class="container">
+    <div class="sec-head" data-reveal>
+      <div class="eyebrow" data-i18n="agenda.eyebrow">04 — AGENDA</div>
+      <h2 class="sec-title split" data-i18n="agenda.title">Upcoming gigs &amp; events.</h2>
+    </div>
+
+    <div class="events" data-reveal>
+      {EVENTS.map((ev) => (
+        <div class="event">
+          <button class="ev-head" aria-expanded="false">
+            <span class="ev-date">
+              <span class="d">{ev.day}</span>
+              <span class="m" data-en={ev.monthEn} data-id={ev.monthId}>{ev.monthEn}</span>
+            </span>
+            <span>
+              <span class="ev-title" data-en={ev.titleEn} data-id={ev.titleId}>{ev.titleEn}</span>
+              <span class="ev-venue">
+                <i data-lucide="map-pin"></i>
+                <span data-en={ev.venueEn} data-id={ev.venueId}>{ev.venueEn}</span>
+              </span>
+            </span>
+            <span class="ev-right">
+              <span class={`tag ${ev.isPentasTag ? 'solid' : ''}`} data-en={ev.tagEn} data-id={ev.tagId}>{ev.tagEn}</span>
+              <i data-lucide="chevron-down" class="chev"></i>
+            </span>
+          </button>
+          <div class="ev-body">
+            <div>
+              <div class="ev-detail">
+                <p data-en={ev.descEn} data-id={ev.descId}>{ev.descEn}</p>
+                <div class="ev-meta">
+                  <span>
+                    <i data-lucide="calendar"></i>
+                    <span data-en={ev.dateFullEn} data-id={ev.dateFullId}>{ev.dateFullEn}</span>
+                  </span>
+                  <span>
+                    <i data-lucide="clock"></i>
+                    <span data-en={ev.timeEn} data-id={ev.timeId}>{ev.timeEn}</span>
+                  </span>
+                  <span>
+                    <i data-lucide="map-pin"></i>
+                    <span data-en={ev.locationEn} data-id={ev.locationId}>{ev.locationEn}</span>
+                  </span>
+                </div>
+                <button
+                  class="remind"
+                  data-ev-en={ev.titleEn}
+                  data-ev-id={ev.titleId}
+                  data-ev={ev.titleEn}
+                >
+                  <i data-lucide="bell"></i>
+                  <span data-i18n="agenda.remind_btn">Remind me</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
